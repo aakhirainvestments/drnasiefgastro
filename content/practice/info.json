@@ -1,0 +1,25 @@
+{
+  "doctorName": "Dr Nasief van der Schyff",
+  "title": "Specialist Gastroenterologist",
+  "phone": "072 191 0835",
+  "email": "nasief.vanderschyff@gmail.com",
+  "hospitals": [
+    {
+      "name": "UCT Private Academic Hospital",
+      "address": "Anzio Road, Observatory, Cape Town, 7925",
+      "phone": ""
+    },
+    {
+      "name": "Cure Day Hospitals Foreshore",
+      "address": "Cape Town",
+      "phone": "021 442 9243"
+    },
+    {
+      "name": "Groote Schuur Hospital",
+      "address": "Main Road, Observatory, Cape Town",
+      "phone": ""
+    }
+  ],
+  "hours": "Monday – Friday: 8:00 AM – 5:00 PM",
+  "medicalAids": "Contracted to most major South African medical aids. Please contact the practice to confirm your specific scheme."
+}

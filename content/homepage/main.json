@@ -1,0 +1,13 @@
+{
+  "heroHeadline": "Dr Nasief van der Schyff",
+  "heroSubtitle": "Delivering expert digestive care with precision and compassion. Trained at UCT and Groote Schuur Hospital, practising at UCT Private Academic Hospital and Cure Day Hospitals Foreshore, Cape Town.",
+  "heroBadge": "Now Accepting Referrals",
+  "doctorPhoto": "",
+  "stats": [
+    { "value": 25, "suffix": "+", "label": "Years Experience" },
+    { "value": 15, "suffix": "+", "label": "Years UCT Lecturer" },
+    { "value": 10, "suffix": "+", "label": "Years HOD Victoria Hospital" },
+    { "value": 100, "suffix": "%", "label": "Patient-Focused Care" }
+  ],
+  "googleReviewLink": "https://g.page/r/YOUR_GOOGLE_BUSINESS_ID/review"
+}
