@@ -3,7 +3,6 @@ import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import { ArrowRight, CheckCircle, Phone, Mail, BookOpen, Users, Award, Stethoscope, Activity, Shield, Clock } from 'lucide-react';
 
-// ─── Animated counter ────────────────────────────────────
 function Counter({ to, suffix = '' }: { to: number; suffix?: string }) {
   const [val, setVal] = useState(0);
   const ref = useRef<HTMLDivElement>(null);
@@ -25,7 +24,6 @@ function Counter({ to, suffix = '' }: { to: number; suffix?: string }) {
   return <div ref={ref} style={{ display: 'inline' }}>{val}{suffix}</div>;
 }
 
-// ─── Fade-in on scroll ────────────────────────────────────
 function FadeIn({ children, delay = 0, style = {} }: { children: React.ReactNode; delay?: number; style?: React.CSSProperties }) {
   const ref = useRef<HTMLDivElement>(null);
   const [vis, setVis] = useState(false);
@@ -66,14 +64,11 @@ export default function Home() {
 
       {/* ── HERO ─────────────────────────────────────────── */}
       <section style={{ minHeight: '100vh', background: 'linear-gradient(135deg, #0A1F44 0%, #12326B 50%, #0A1F44 100%)', position: 'relative', overflow: 'hidden', display: 'flex', alignItems: 'center', paddingTop: 72 }}>
-        {/* Decorative circles */}
         <div style={{ position: 'absolute', top: -100, right: -100, width: 600, height: 600, borderRadius: '50%', background: 'rgba(0,180,216,0.06)', pointerEvents: 'none' }} />
         <div style={{ position: 'absolute', bottom: -150, left: -100, width: 500, height: 500, borderRadius: '50%', background: 'rgba(21,101,192,0.1)', pointerEvents: 'none' }} />
-        {/* Grid pattern */}
         <div style={{ position: 'absolute', inset: 0, backgroundImage: 'radial-gradient(rgba(0,180,216,0.08) 1px, transparent 1px)', backgroundSize: '40px 40px', pointerEvents: 'none' }} />
 
         <div style={{ maxWidth: 1200, margin: '0 auto', padding: '60px 24px', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 60, alignItems: 'center', width: '100%', position: 'relative', zIndex: 1 }} className="hero-grid">
-          {/* Left */}
           <div>
             <div style={{ opacity: heroVis ? 1 : 0, transform: heroVis ? 'translateY(0)' : 'translateY(20px)', transition: 'all 0.6s ease 0.1s' }}>
               <div style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: 'rgba(0,180,216,0.15)', border: '1px solid rgba(0,180,216,0.3)', borderRadius: 20, padding: '6px 16px', marginBottom: 24 }}>
@@ -110,9 +105,8 @@ export default function Home() {
               </Link>
             </div>
 
-            {/* Credential pills */}
             <div style={{ opacity: heroVis ? 1 : 0, transition: 'opacity 0.6s ease 0.6s', display: 'flex', gap: 10, flexWrap: 'wrap' }}>
-              {['MMed Internal Medicine', 'MPhil Emergency Med', 'UCT Senior Lecturer', 'HPCSA Registered'].map(c => (
+              {['MMed Internal Medicine', 'MPhil Emergency Med', 'MPhil Gastroenterology (in progress)', 'UCT Senior Lecturer', 'HPCSA Registered'].map(c => (
                 <span key={c} style={{ background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.15)', borderRadius: 4, padding: '4px 12px', color: 'rgba(255,255,255,0.7)', fontSize: 11, fontWeight: 600, letterSpacing: 0.5 }}>
                   {c}
                 </span>
@@ -120,25 +114,21 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Right — Photo placeholder + floating cards */}
+          {/* Right — Photo placeholder */}
           <div style={{ position: 'relative', display: 'flex', justifyContent: 'center', opacity: heroVis ? 1 : 0, transform: heroVis ? 'translateX(0)' : 'translateX(30px)', transition: 'all 0.8s ease 0.3s' }} className="hero-photo-wrap">
-            {/* Main photo frame */}
             <div style={{ width: 340, height: 420, borderRadius: 24, background: 'linear-gradient(145deg, rgba(0,180,216,0.15), rgba(21,101,192,0.1))', border: '1px solid rgba(0,180,216,0.25)', display: 'flex', alignItems: 'flex-end', justifyContent: 'center', overflow: 'hidden', position: 'relative' }}>
-              {/* Replace the below div with an <img> tag once you have the photo */}
               <div style={{ position: 'absolute', inset: 0, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', color: 'rgba(255,255,255,0.3)' }}>
                 <div style={{ width: 100, height: 100, borderRadius: '50%', background: 'rgba(0,180,216,0.2)', marginBottom: 16, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                   <Stethoscope size={40} color="rgba(0,180,216,0.5)" />
                 </div>
-                <p style={{ fontSize: 13, textAlign: 'center', maxWidth: 200 }}>Replace with<br />Dr Van der Schyff&apos;s photo</p>
+                <p style={{ fontSize: 13, textAlign: 'center', maxWidth: 200 }}>Add photo via<br />Tina CMS or GitHub</p>
               </div>
-              {/* Name card at bottom */}
               <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, background: 'rgba(10,31,68,0.9)', backdropFilter: 'blur(8px)', padding: '16px 20px' }}>
                 <div style={{ fontFamily: 'DM Serif Display, serif', color: 'white', fontSize: 16 }}>Dr Nasief van der Schyff</div>
                 <div style={{ color: '#00B4D8', fontSize: 12, fontWeight: 600, letterSpacing: 0.5 }}>Specialist Gastroenterologist · UCT</div>
               </div>
             </div>
 
-            {/* Floating stat cards */}
             <div style={{ position: 'absolute', top: 20, left: -20, background: 'white', borderRadius: 12, padding: '12px 18px', boxShadow: '0 8px 30px rgba(0,0,0,0.25)', animation: 'float1 4s ease-in-out infinite' }}>
               <div style={{ fontSize: 22, fontWeight: 800, color: '#0A1F44', fontFamily: 'DM Serif Display, serif' }}>25+</div>
               <div style={{ fontSize: 11, color: '#64748B', fontWeight: 600, letterSpacing: 0.5 }}>Years Experience</div>
@@ -154,7 +144,6 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Scroll indicator */}
         <div style={{ position: 'absolute', bottom: 32, left: '50%', transform: 'translateX(-50%)', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 8, opacity: heroVis ? 1 : 0, transition: 'opacity 1s ease 1s' }}>
           <div style={{ width: 1, height: 40, background: 'linear-gradient(to bottom, transparent, rgba(0,180,216,0.8))', animation: 'scrollDown 2s ease-in-out infinite' }} />
           <div style={{ fontSize: 10, color: 'rgba(255,255,255,0.4)', letterSpacing: 2, textTransform: 'uppercase' }}>Scroll</div>
@@ -244,6 +233,7 @@ export default function Home() {
               {[
                 { title: 'MMed Internal Medicine', sub: 'Stellenbosch University / Tygerberg Hospital' },
                 { title: 'MPhil Emergency Medicine', sub: 'Advanced postgraduate qualification' },
+                { title: 'MPhil Gastroenterology', sub: 'In progress' },
                 { title: 'Gastroenterology Fellowship', sub: 'UCT / Groote Schuur Hospital, 2025' },
                 { title: 'Lead SA Award', sub: 'Recognition for healthcare leadership' },
                 { title: 'Western Cape Innovation Award', sub: 'Provincial recognition for excellence' },
@@ -289,7 +279,6 @@ export default function Home() {
             ))}
           </div>
 
-          {/* Referral CTA */}
           <FadeIn>
             <div style={{ background: 'linear-gradient(135deg, #0A1F44, #12326B)', borderRadius: 20, padding: '48px 40px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 32, flexWrap: 'wrap' }}>
               <div>
@@ -324,9 +313,9 @@ export default function Home() {
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 24 }}>
             {[
-              { tag: 'Colonoscopy', title: 'What to Expect During Your Colonoscopy', desc: 'A step-by-step guide covering preparation, the procedure itself, and recovery — so you arrive informed and confident.', date: 'Dec 2024' },
-              { tag: 'IBD', title: 'Managing Inflammatory Bowel Disease', desc: 'Understanding the difference between Crohn\'s disease and ulcerative colitis, and the latest evidence-based treatment options.', date: 'Nov 2024' },
-              { tag: 'GERD', title: 'Beyond Heartburn: Understanding GERD', desc: 'Gastroesophageal reflux disease affects millions. Learn when lifestyle changes are enough — and when specialist input is needed.', date: 'Oct 2024' },
+              { tag: 'Colonoscopy', title: 'What to Expect During Your Colonoscopy', desc: 'A step-by-step guide covering preparation, the procedure itself, and recovery — so you arrive informed and confident.', date: 'Dec 2024', slug: 'colonoscopy-what-to-expect' },
+              { tag: 'IBD', title: 'Managing Inflammatory Bowel Disease', desc: 'Understanding the difference between Crohn\'s disease and ulcerative colitis, and the latest evidence-based treatment options.', date: 'Nov 2024', slug: 'understanding-ibd' },
+              { tag: 'GERD', title: 'Beyond Heartburn: Understanding GERD', desc: 'Gastroesophageal reflux disease affects millions. Learn when lifestyle changes are enough — and when specialist input is needed.', date: 'Oct 2024', slug: 'gerd-beyond-heartburn' },
             ].map((p, i) => (
               <FadeIn key={i} delay={i * 120}>
                 <div style={{ background: 'white', borderRadius: 16, overflow: 'hidden', transition: 'all 0.3s' }}
@@ -340,7 +329,7 @@ export default function Home() {
                     </div>
                     <h3 style={{ fontFamily: 'DM Serif Display, serif', fontSize: 20, color: '#0A1F44', marginBottom: 12, lineHeight: 1.3 }}>{p.title}</h3>
                     <p style={{ fontSize: 14, color: '#64748B', lineHeight: 1.7, marginBottom: 20 }}>{p.desc}</p>
-                    <Link href="/blog" style={{ color: '#00B4D8', textDecoration: 'none', fontWeight: 700, fontSize: 13, display: 'flex', alignItems: 'center', gap: 6 }}>
+                    <Link href={`/blog/${p.slug}`} style={{ color: '#00B4D8', textDecoration: 'none', fontWeight: 700, fontSize: 13, display: 'flex', alignItems: 'center', gap: 6 }}>
                       Read Article <ArrowRight size={14} />
                     </Link>
                   </div>
@@ -363,7 +352,6 @@ export default function Home() {
               Your feedback helps other patients find the right care. If you&apos;ve visited the practice, we&apos;d be grateful for a Google review.
             </p>
 
-            {/* Star display */}
             <div style={{ display: 'flex', justifyContent: 'center', gap: 6, marginBottom: 32 }}>
               {[1,2,3,4,5].map(s => (
                 <svg key={s} width="32" height="32" viewBox="0 0 24 24" fill="#F59E0B" stroke="none">
@@ -373,7 +361,7 @@ export default function Home() {
             </div>
 
             <a
-              href="https://g.page/r/YOUR_GOOGLE_BUSINESS_ID/review"
+              href="https://g.page/r/CabtXqcgF1FMEBM/review"
               target="_blank"
               rel="noopener noreferrer"
               style={{
@@ -387,7 +375,6 @@ export default function Home() {
               onMouseEnter={e => { e.currentTarget.style.transform = 'translateY(-2px)'; e.currentTarget.style.boxShadow = '0 12px 40px rgba(0,0,0,0.4)'; }}
               onMouseLeave={e => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.boxShadow = '0 8px 30px rgba(0,0,0,0.3)'; }}
             >
-              {/* Google G icon */}
               <svg width="22" height="22" viewBox="0 0 24 24">
                 <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
                 <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
@@ -396,10 +383,6 @@ export default function Home() {
               </svg>
               Leave a Google Review
             </a>
-
-            <p style={{ fontSize: 12, color: 'rgba(255,255,255,0.35)', marginTop: 20 }}>
-              Once your Google Business Profile is live, replace the link above with your actual review URL.
-            </p>
           </FadeIn>
         </div>
       </section>
@@ -442,53 +425,13 @@ export default function Home() {
         @keyframes float2 { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
         @keyframes float3 { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
         @keyframes scrollDown { 0% { opacity: 0; height: 0; } 50% { opacity: 1; height: 40px; } 100% { opacity: 0; height: 40px; } }
-
-        /* ── Mobile ───────────────────────────────────────── */
         @media (max-width: 768px) {
           .hero-grid { grid-template-columns: 1fr !important; gap: 32px !important; padding: 40px 20px !important; }
           .hero-photo-wrap { display: none !important; }
           .about-grid { grid-template-columns: 1fr !important; gap: 40px !important; }
           .stats-grid { grid-template-columns: repeat(2, 1fr) !important; }
           .stats-grid > div { border-right: none !important; border-bottom: 1px solid rgba(255,255,255,0.08); }
-
-          /* Services grid — single column on small screens */
-          section > div > div[style*="repeat(auto-fit, minmax(280px"] {
-            grid-template-columns: 1fr !important;
-          }
-          /* About credentials list — full width */
-          section > div > div[style*="repeat(auto-fit, minmax(240px"] {
-            grid-template-columns: 1fr !important;
-          }
-          /* Blog grid */
-          section > div > div[style*="repeat(auto-fill, minmax(320px"] {
-            grid-template-columns: 1fr !important;
-          }
-          /* Referral CTA flex → column */
-          div[style*="justifyContent: 'space-between'"] {
-            flex-direction: column !important;
-            text-align: center !important;
-          }
-          /* Services detail page — single col */
-          div[style*="repeat(auto-fit, minmax(200px"] {
-            grid-template-columns: 1fr !important;
-          }
-          /* Services page two-col cards */
-          div[style*="1fr 1fr"][style*="gap: 48"] {
-            grid-template-columns: 1fr !important;
-            gap: 24px !important;
-            padding: 24px !important;
-          }
-          /* Research grid */
-          div[style*="repeat(3, 1fr)"] {
-            grid-template-columns: 1fr !important;
-          }
-          /* Stats bar */
-          div[style*="repeat(4, 1fr)"] {
-            grid-template-columns: repeat(2, 1fr) !important;
-          }
         }
-
-        /* ── Tablet ───────────────────────────────────────── */
         @media (min-width: 769px) and (max-width: 1024px) {
           .hero-grid { gap: 32px !important; }
           .hero-photo-wrap > div { width: 280px !important; height: 360px !important; }
@@ -498,7 +441,6 @@ export default function Home() {
   );
 }
 
-// ── MapPin for contact ──
 function MapPin({ size, color }: { size: number; color?: string }) {
   return (
     <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color || 'currentColor'} strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
