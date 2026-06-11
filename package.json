@@ -3,12 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "npx tinacms dev -c 'next dev'",
-    "build": "node node_modules/tinacms/dist/bin.js build && next build",
+    "dev": "tinacms dev -c 'next dev'",
+    "build": "tinacms build && next build",
     "start": "next start",
     "lint": "eslint"
   },
   "dependencies": {
+    "@tinacms/cli": "^1.6.0",
     "framer-motion": "^12.40.0",
     "lucide-react": "^1.17.0",
     "next": "15.3.8",
