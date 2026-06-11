@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "npx tinacms dev -c 'next dev'",
-    "build": "./node_modules/.bin/tinacms build && next build",
+    "build": "node node_modules/tinacms/dist/bin.js build && next build",
     "start": "next start",
     "lint": "eslint"
   },
